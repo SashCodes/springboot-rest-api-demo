@@ -1,41 +1,28 @@
-package com.sashcodes.vendor.api.model;
+package com.sashcodes.vendor.api.dto;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
-import java.math.BigDecimal;
-
-@Entity
-@Table(name = "vendor_info")
-public class Vendor {
-
-    @Id
-    @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long vendorId;
+public class VendorRequestDTO {
+    @NotBlank(message = "Vendor name cannot be null!")
     private String vendorName;
+    @NotBlank(message = "Password cannot be null!")
     private String vendorPassword;
+    @NotBlank(message = "Address cannot be null!")
     private String vendorAddress;
-    private String vendorPhone;
+    @NotBlank(message = "Email cannot be empty!")
+    @Email(message = "Invalid email!")
     private String vendorEmail;
+    @NotBlank(message = "Invalid phone number!")
+    private String vendorPhone;
 
-    public Vendor() {
-    }
-
-    public Vendor(Long vendorId, String vendorName, String vendorPassword, String vendorAddress, String vendorPhone, String vendorEmail) {
-        this.vendorId = vendorId;
+    public VendorRequestDTO(String vendorName, String vendorPassword, String vendorAddress, String vendorEmail, String vendorPhone) {
         this.vendorName = vendorName;
         this.vendorPassword = vendorPassword;
         this.vendorAddress = vendorAddress;
-        this.vendorPhone = vendorPhone;
         this.vendorEmail = vendorEmail;
-    }
-
-    public Long getVendorId() {
-        return vendorId;
-    }
-
-    public void setVendorId(Long vendorId) {
-        this.vendorId = vendorId;
+        this.vendorPhone = vendorPhone;
     }
 
     public String getVendorName() {
@@ -62,19 +49,19 @@ public class Vendor {
         this.vendorAddress = vendorAddress;
     }
 
-    public String getVendorPhone() {
-        return vendorPhone;
-    }
-
-    public void setVendorPhone(String vendorPhone) {
-        this.vendorPhone = vendorPhone;
-    }
-
     public String getVendorEmail() {
         return vendorEmail;
     }
 
     public void setVendorEmail(String vendorEmail) {
         this.vendorEmail = vendorEmail;
+    }
+
+    public String getVendorPhone() {
+        return vendorPhone;
+    }
+
+    public void setVendorPhone(String vendorPhone) {
+        this.vendorPhone = vendorPhone;
     }
 }

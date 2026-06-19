@@ -1,33 +1,21 @@
-package com.sashcodes.vendor.api.model;
+package com.sashcodes.vendor.api.dto;
 
-import jakarta.persistence.*;
-
-import java.math.BigDecimal;
-
-@Entity
-@Table(name = "vendor_info")
-public class Vendor {
-
-    @Id
-    @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class VendorResponseDTO {
     private Long vendorId;
     private String vendorName;
-    private String vendorPassword;
     private String vendorAddress;
-    private String vendorPhone;
     private String vendorEmail;
+    private String vendorPhone;
 
-    public Vendor() {
-    }
-
-    public Vendor(Long vendorId, String vendorName, String vendorPassword, String vendorAddress, String vendorPhone, String vendorEmail) {
+    public VendorResponseDTO(Long vendorId, String vendorName, String vendorAddress, String vendorEmail, String vendorPhone) {
         this.vendorId = vendorId;
         this.vendorName = vendorName;
-        this.vendorPassword = vendorPassword;
         this.vendorAddress = vendorAddress;
-        this.vendorPhone = vendorPhone;
         this.vendorEmail = vendorEmail;
+        this.vendorPhone = vendorPhone;
+    }
+
+    public VendorResponseDTO() {
     }
 
     public Long getVendorId() {
@@ -46,14 +34,6 @@ public class Vendor {
         this.vendorName = vendorName;
     }
 
-    public String getVendorPassword() {
-        return vendorPassword;
-    }
-
-    public void setVendorPassword(String vendorPassword) {
-        this.vendorPassword = vendorPassword;
-    }
-
     public String getVendorAddress() {
         return vendorAddress;
     }
@@ -62,19 +42,19 @@ public class Vendor {
         this.vendorAddress = vendorAddress;
     }
 
-    public String getVendorPhone() {
-        return vendorPhone;
-    }
-
-    public void setVendorPhone(String vendorPhone) {
-        this.vendorPhone = vendorPhone;
-    }
-
     public String getVendorEmail() {
         return vendorEmail;
     }
 
     public void setVendorEmail(String vendorEmail) {
         this.vendorEmail = vendorEmail;
+    }
+
+    public String getVendorPhone() {
+        return vendorPhone;
+    }
+
+    public void setVendorPhone(String vendorPhone) {
+        this.vendorPhone = vendorPhone;
     }
 }
