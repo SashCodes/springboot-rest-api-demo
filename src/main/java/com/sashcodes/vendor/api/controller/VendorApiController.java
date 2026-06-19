@@ -19,7 +19,7 @@ public class VendorApiController {
     }
 
     @GetMapping("/vendor/{vendorId}")
-    public Vendor getVendor(@PathVariable("vendorId") BigDecimal vendorId)
+    public Vendor getVendor(@PathVariable("vendorId") Long vendorId)
     {
         return vendorApiService.getVendorById(vendorId);
     }
@@ -51,7 +51,7 @@ public class VendorApiController {
     }
 
     @DeleteMapping("/vendor/{vendorId}")
-    public String deleteVendor(@PathVariable("vendorId") BigDecimal vendorId)
+    public String deleteVendor(@PathVariable("vendorId") Long vendorId)
     {
         vendorApiService.deleteVendor(vendorId);
         return "Vendor deleted successfully";

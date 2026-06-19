@@ -17,7 +17,7 @@ public class VendorApiServiceImpl implements VendorApiService {
     }
 
     @Override
-    public Vendor getVendorById(BigDecimal vendorId) {
+    public Vendor getVendorById(Long vendorId) {
         return vendorApiRepository.findById(vendorId).get();
     }
 
@@ -44,7 +44,7 @@ public class VendorApiServiceImpl implements VendorApiService {
     }
 
     @Override
-    public String deleteVendor(BigDecimal vendorId) {
+    public String deleteVendor(Long vendorId) {
         vendorApiRepository.deleteById(vendorId);
         return "Vendor deleted successfully";
     }

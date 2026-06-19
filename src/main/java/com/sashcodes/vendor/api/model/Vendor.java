@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 public class Vendor {
 
     @Id
-    private BigDecimal vendorId;
+    private Long vendorId;
     private String vendorName;
     private String vendorAddress;
     private String vendorPhone;
@@ -20,7 +20,7 @@ public class Vendor {
     public Vendor() {
     }
 
-    public Vendor(BigDecimal vendorId, String vendorName, String vendorAddress, String vendorPhone, String vendorEmail) {
+    public Vendor(Long vendorId, String vendorName, String vendorAddress, String vendorPhone, String vendorEmail) {
         this.vendorId = vendorId;
         this.vendorName = vendorName;
         this.vendorAddress = vendorAddress;
@@ -28,11 +28,11 @@ public class Vendor {
         this.vendorEmail = vendorEmail;
     }
 
-    public BigDecimal getVendorId() {
+    public Long getVendorId() {
         return vendorId;
     }
 
-    public void setVendorId(BigDecimal vendorId) {
+    public void setVendorId(Long vendorId) {
         this.vendorId = vendorId;
     }
 

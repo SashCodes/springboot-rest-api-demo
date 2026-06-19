@@ -9,6 +9,6 @@ import java.math.BigDecimal;
 import java.util.Optional;
 
 
-public interface VendorApiRepository extends JpaRepository<Vendor, BigDecimal> {
+public interface VendorApiRepository extends JpaRepository<Vendor, Long> {
     Optional<Vendor> findByVendorName(String vendorName);
 }
